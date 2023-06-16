@@ -234,6 +234,7 @@ func StatusTransitGatewayRouteTableAttachmentState(ctx context.Context, conn *ne
 	}
 }
 
+// waitTransitGatewayRouteTableAttachmentCreated does something
 func waitTransitGatewayRouteTableAttachmentCreated(ctx context.Context, conn *networkmanager.NetworkManager, id string, timeout time.Duration) (*networkmanager.TransitGatewayRouteTableAttachment, error) {
 	stateConf := &retry.StateChangeConf{
 		Pending: []string{networkmanager.AttachmentStateCreating, networkmanager.AttachmentStatePendingNetworkUpdate},
